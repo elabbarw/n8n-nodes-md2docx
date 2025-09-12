@@ -90,13 +90,6 @@ export class MdToDocx implements INodeType {
 				default: {},
 				options: [
 					{
-						displayName: 'Title Size',
-						name: 'titleSize',
-						type: 'number',
-						default: 48,
-						description: 'Font size for document title (in half-points, so 48 = 24pt)',
-					},
-					{
 						displayName: 'Heading 1 Size',
 						name: 'heading1Size',
 						type: 'number',
@@ -111,11 +104,18 @@ export class MdToDocx implements INodeType {
 						description: 'Font size for H2 headings (in half-points, so 36 = 18pt)',
 					},
 					{
-						displayName: 'Paragraph Size',
-						name: 'paragraphSize',
+						displayName: 'Heading Spacing',
+						name: 'headingSpacing',
 						type: 'number',
-						default: 24,
-						description: 'Font size for paragraphs (in half-points, so 24 = 12pt)',
+						default: 240,
+						description: 'Spacing before/after headings',
+					},
+					{
+						displayName: 'Line Spacing',
+						name: 'lineSpacing',
+						type: 'number',
+						default: 1.15,
+						description: 'Line spacing multiplier',
 					},
 					{
 						displayName: 'Paragraph Alignment',
@@ -131,18 +131,11 @@ export class MdToDocx implements INodeType {
 						description: 'Text alignment for paragraphs',
 					},
 					{
-						displayName: 'Line Spacing',
-						name: 'lineSpacing',
+						displayName: 'Paragraph Size',
+						name: 'paragraphSize',
 						type: 'number',
-						default: 1.15,
-						description: 'Line spacing multiplier',
-					},
-					{
-						displayName: 'Heading Spacing',
-						name: 'headingSpacing',
-						type: 'number',
-						default: 240,
-						description: 'Spacing before/after headings',
+						default: 24,
+						description: 'Font size for paragraphs (in half-points, so 24 = 12pt)',
 					},
 					{
 						displayName: 'Paragraph Spacing',
@@ -161,6 +154,13 @@ export class MdToDocx implements INodeType {
 						],
 						default: 'LTR',
 						description: 'Text direction for the document (useful for Arabic, Hebrew, etc.)',
+					},
+					{
+						displayName: 'Title Size',
+						name: 'titleSize',
+						type: 'number',
+						default: 48,
+						description: 'Font size for document title (in half-points, so 48 = 24pt)',
 					},
 				],
 			},
