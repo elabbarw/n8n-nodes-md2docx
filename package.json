@@ -54,6 +54,6 @@
     "axios": "1.12.0"
   },
   "dependencies": {
-    "@mohtasham/md-to-docx": "^1.4.8"
+    "@mohtasham/md-to-docx": "2.3.0"
   }
 }
