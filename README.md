@@ -1,6 +1,6 @@
 # n8n Community Node: Markdown → DOCX
 
-Convert Markdown text into a DOCX file inside your n8n workflows. This node uses `@mohtasham/md-to-docx` to generate a `.docx` and outputs it as binary data.
+Convert Markdown text into a DOCX file inside your n8n workflows. This node uses `@mohtasham/md-to-docx` to generate a `.docx` and outputs it as binary data. No Pandoc or custom builds required.
 
 - **Purpose**: Turn Markdown content from incoming items into a Word document with customizable formatting
 - **Input sources**: JSON field (string) or Binary text file
