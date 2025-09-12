@@ -1,0 +1,17 @@
+{
+	"node": "n8n-nodes-md2docx.MdToDocx",
+	"nodeVersion": "1.0",
+	"codex": {
+		"categories": ["Utility"],
+		"subcategories": {
+			"Utility": ["Document"]
+		},
+		"resources": {
+			"primaryDocumentation": [
+				{
+					"url": "https://github.com/elabbarw/n8n-nodes-md2docx"
+				}
+			]
+		}
+	}
+}

@@ -2,9 +2,11 @@
 
 Convert Markdown text into a DOCX file inside your n8n workflows. This node uses `@mohtasham/md-to-docx` to generate a `.docx` and outputs it as binary data.
 
-- **Purpose**: Turn Markdown content from incoming items into a Word document
+- **Purpose**: Turn Markdown content from incoming items into a Word document with customizable formatting
 - **Input sources**: JSON field (string) or Binary text file
 - **Output**: Binary `.docx` on a configurable property
+- **Document types**: Standard documents or report-style formatting
+- **Advanced formatting**: Font sizes, alignment, spacing, and RTL text support
 
 Powered by `@mohtasham/md-to-docx` ([repo](https://github.com/MohtashamMurshid/md-to-docx)).
 
@@ -18,16 +20,17 @@ Follow n8n’s Community Nodes installation guide:
 If developing locally, run:
 ```
 npm install
-npm run build
+n8n-node build
+n8n-node dev
 ```
-Then point n8n to your local community node folder per the docs.
+This will launch an instance of N8N, where you can test out the node locally.
 
 ## Node: Markdown to DOCX
 
 - **Display name**: Markdown to DOCX
 - **Name**: mdToDocx
 - **Group**: transform
-- **Version**: 1
+- **Version**: 1.0.0
 
 ### Parameters
 
@@ -42,6 +45,19 @@ Then point n8n to your local community node folder per the docs.
   - Output filename for the generated docx (default: `document.docx`)
 - **Output Binary Property** (string, required)
   - Binary property to store the generated docx (default: `data`)
+- **Document Type** (options)
+  - Document: Standard document format
+  - Report: Report-style document format
+- **Advanced Options** (collection, optional)
+  - **Title Size** (number): Font size for document title in half-points (default: 48 = 24pt)
+  - **Heading 1 Size** (number): Font size for H1 headings in half-points (default: 48 = 24pt)
+  - **Heading 2 Size** (number): Font size for H2 headings in half-points (default: 36 = 18pt)
+  - **Paragraph Size** (number): Font size for paragraphs in half-points (default: 24 = 12pt)
+  - **Paragraph Alignment** (options): Text alignment - Left, Right, Center, or Justified (default: Left)
+  - **Line Spacing** (number): Line spacing multiplier (default: 1.15)
+  - **Heading Spacing** (number): Spacing before/after headings (default: 240)
+  - **Paragraph Spacing** (number): Spacing before/after paragraphs (default: 240)
+  - **Text Direction** (options): Left to Right (LTR) or Right to Left (RTL) for international text support (default: LTR)
 
 ### Inputs
 
@@ -75,6 +91,21 @@ Then point n8n to your local community node folder per the docs.
    - Binary Property: `data` (or your binary key)
    - Filename: `converted.docx`
    - Output Binary Property: `docx`
+
+### Example 3: Custom Formatting
+
+1. Add a Set node with Markdown content
+2. Add the "Markdown to DOCX" node:
+   - Markdown Source: From Field
+   - Markdown Field: `markdown`
+   - Document Type: Report
+   - Filename: `styled-report.docx`
+   - Advanced Options:
+     - Title Size: 56 (28pt)
+     - Paragraph Size: 22 (11pt)
+     - Paragraph Alignment: Justified
+     - Line Spacing: 1.5
+     - Text Direction: RTL (for Arabic/Hebrew content)
 
 ## Compatibility
 
