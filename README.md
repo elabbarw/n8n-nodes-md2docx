@@ -30,7 +30,7 @@ This will launch an instance of N8N, where you can test out the node locally.
 - **Display name**: Markdown to DOCX
 - **Name**: mdToDocx
 - **Group**: transform
-- **Version**: 1.0.0
+- **Version**: 1.0.2
 
 ### Parameters
 

@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-md2docx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "n8n community node to convert Markdown to DOCX using @mohtasham/md-to-docx",
   "keywords": [
     "n8n-community-node-package"
@@ -54,6 +54,6 @@
     "axios": "1.12.0"
   },
   "dependencies": {
-    "@mohtasham/md-to-docx": "2.3.0"
+    "@mohtasham/md-to-docx": "2.4.0"
   }
 }
